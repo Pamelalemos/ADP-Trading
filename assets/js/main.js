@@ -1,10 +1,3 @@
-/**
-* Template Name: Logis
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
@@ -27,6 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollY > 100 ? selectHeader.classList.add('sticked') : selectHeader.classList.remove('sticked');
     });
   }
+
+  const getStartedButton = document.querySelector('.btn-get-started');
+  if (getStartedButton) {
+   getStartedButton.addEventListener('click', (event) => {
+     event.preventDefault();
+     const targetSection = document.querySelector(getStartedButton.getAttribute('href'));
+     if (targetSection) {
+       window.scrollTo({
+         top: targetSection.offsetTop,
+         behavior: 'smooth'
+       });
+     }
+   });
+  }
+
+
+
 
   /**
    * Scroll top button
